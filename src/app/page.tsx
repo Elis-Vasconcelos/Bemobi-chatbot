@@ -1,10 +1,11 @@
-import Image from "next/image";
 import BillingPage from "./componentes/BillingPage";
+import styles from "./page.module.css";
+
 
 export default function Home() {
   return (
-    <main>
-      <BillingPage />
+    <main className={styles.main}>
+      {/*<BillingPage />*/}
     </main>
   );
 }
