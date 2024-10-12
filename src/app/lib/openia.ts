@@ -1,10 +1,9 @@
 import 'dotenv/config';
 import OpenAI from 'openai';
 
-const API_KEY: string = process.env.OPENAI_API_KEY
-
 const openai = new OpenAI({
-  apiKey: API_KEY
+  apiKey: "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",
+  dangerouslyAllowBrowser: true
 });
 
 export const generateAIResponse = async (prompt: string) => {
@@ -19,4 +18,4 @@ export const generateAIResponse = async (prompt: string) => {
     } else {
       throw new Error("Resposta inválida da API");
     }
-  };
+};
