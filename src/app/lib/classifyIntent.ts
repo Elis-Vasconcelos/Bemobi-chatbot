@@ -1,22 +1,21 @@
 import { generateAIResponse } from "./openia";
+import { IntentCategoria } from "./IntentEnum";
 
 export const classifyIntent = async (userInput: string) => {
-  const aiPrompt = `The user has the following complaint: "${userInput}". Based on the complaint, classify it into one of these categories: 
-  - Taxas bancárias não autorizadas
-  - Serviços não solicitados
-  - Cobranças duplicadas
-  - Erros em faturas
-  - Cobranças após o cancelamento
-  
-  Return only the category that best describes the issue.`;
+  const aiPrompt = `O usuário fez a seguinte reclamação: "${userInput}". Baseado na reclamação, classifique-a em uma das seguintes categorias:
+  - ${IntentCategoria.TAXAS_NAO_AUTORIZADAS}
+  - ${IntentCategoria.SERVICOS_NAO_SOLICITADOS}
+  - ${IntentCategoria.COBRANCAS_DUPLICADAS}
+  - ${IntentCategoria.ERROS_EM_FATURAS}
+  - ${IntentCategoria.COBRANCAS_APOS_CANCELAMENTO}
+
+  Retorne apenas a categoria que melhor descreve o problema.`;
 
   const aiResponse = await generateAIResponse(aiPrompt);
-  
-  // Certifique-se de que aiResponse não é undefined antes de usá-la
-    if (typeof aiResponse !== 'undefined') {
-        return aiResponse.trim();  // Return the classified category
-    } else {
-        console.error("aiResponse está indefinida");
-    }
-    
-};
+  if (aiResponse) {
+    return aiResponse.trim();
+  } else {
+    console.error("aiResponse está indefinida");
+    return "";
+  }
+};  

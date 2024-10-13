@@ -1,20 +1,16 @@
 import { generateAIResponse } from "./openia";
 
 export const applyCreditOrEscalate = async (duplicateCharges: any) => {
-  const aiPrompt = `We have identified the following duplicate charges: ${JSON.stringify(
-    duplicateCharges
-  )}. Should we automatically apply a credit or escalate to human support for further review? Provide a recommendation.`;
+  const aiPrompt = `De acordo com os json identificados na resposta IA a seguir: ${duplicateCharges}. Devemos aplicar um crédito automaticamente ou encaminhar para suporte humano? Forneça uma recomendação escrevendo somente um dos dois outputs: crédito ou não`;
 
   const aiResponse = await generateAIResponse(aiPrompt);
+  console.log(aiPrompt)
+  console.log(aiResponse)
 
   if (aiResponse) {
-    return aiResponse.toLowerCase().includes('credit')
-      ? duplicateCharges.map((charge: any) => ({
-          id: charge.id,
-          amountCredited: charge.amount,
-          status: 'credited',
-        }))
-      : { message: 'Issue has been escalated for human review.' };
+    return aiResponse.toLowerCase().includes('crédito')
+      ? duplicateCharges
+      : { mensagem: 'Problema encaminhado para revisão humana.' };
   } else {
     throw new Error("Resposta inválida da API");
   }

@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import OpenAI from 'openai';
+import { mockUserData } from './generateUserResponse';
 
 const openai = new OpenAI({
   apiKey: "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",
@@ -9,7 +10,7 @@ const openai = new OpenAI({
 export const generateAIResponse = async (prompt: string) => {
     const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
-      messages: [{ role: "user", content: prompt }],
+      messages: [{ role: "user", content: prompt } ],
       temperature: 0.7,
     });
   
