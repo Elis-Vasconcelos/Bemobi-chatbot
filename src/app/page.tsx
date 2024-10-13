@@ -1,10 +1,13 @@
-import Image from "next/image";
-import BillingPage from "./componentes/BillingPage";
+{/*import BillingPage from "./componentes/BillingPage";*/}
+import styles from "./page.module.css";
+import ButtonChat from "./componentes/Chatbot/chat";
+
 
 export default function Home() {
   return (
-    <main>
-      <BillingPage />
+    <main className={styles.main}>
+      {/*<BillingPage />*/}
+      <ButtonChat/>
     </main>
   );
 }
