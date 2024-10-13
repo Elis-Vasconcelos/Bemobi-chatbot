@@ -14,6 +14,11 @@
     border-radius: 8px;           
 }
 
-.tittle{
-    color: black;
-}
+@media screen and (max-width: 468px) {
+    .modal {
+        width: 100vw; /* O modal ocupa toda a largura da tela */
+        height: 100vh; /* O modal ocupa toda a altura da tela */
+        border-radius: 0; /* Remove bordas arredondadas para um visual mais "plano" */
+    }
+  
+  }
