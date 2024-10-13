@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    align-items: center;
+    height: 62px;
+    background-color: #002699;
+    
+}
+
+.home{
+    color: white;
+    padding-left: 50px;
+    font-weight: bold;
+}

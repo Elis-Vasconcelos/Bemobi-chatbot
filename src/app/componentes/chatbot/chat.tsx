@@ -1,12 +1,25 @@
-import styles from "./chat.module.css";
+"use client"
 
-export default function ButtonChat() {
-    return (
+import React, { useState } from "react";
+import styles from "./chat.module.css";
+import Modal from "../Modal/modal";
+
+const ButtonChat: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false); // Estado para controlar a abertura do modal
+
+  const openModal = () => setIsOpen(true);   // Função para abrir o modal
+  const closeModal = () => setIsOpen(false);  // Função para fechar o modal
+
+  return (
+    <div className={styles.container}>
       <main className={styles.main}>
-        <button className={styles.button}>
+        <button className={styles.button} onClick={openModal}>
           B
         </button>
       </main>
-    );
-  }
-  
+      <Modal isOpen={isOpen} onClose={closeModal} /> 
+    </div>
+  );
+};
+
+export default ButtonChat;
