@@ -13,9 +13,12 @@ const ButtonChat: React.FC = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <button className={styles.button} onClick={openModal}>
-          B
-        </button>
+        <button
+            className={`${styles.button} ${isOpen ? styles.hidden : ''}`} // Adiciona a classe 'hidden' se o modal estiver aberto
+            onClick={openModal}
+          >
+            B
+          </button>
       </main>
       <Modal isOpen={isOpen} onClose={closeModal} /> 
     </div>
