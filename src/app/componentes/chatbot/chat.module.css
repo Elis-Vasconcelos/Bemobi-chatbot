@@ -7,13 +7,23 @@
     cursor: pointer;
     font-size: 30px;
     font-weight: bold;
+    
+    @media (max-width: 900px) {
+      height: 35px;
+      width: 35px;
+      font-size: 15px;
+    }
   }
   
 .main{
     position: fixed;
-    right: 85px; 
-    margin-top: 750px;
+    margin-top: 34rem;
     display: flex;
+    right: 85px; 
     justify-content: center;
-
+    
+    @media (max-width: 900px) {
+      margin-top: 1rem;
+      right: 20px; 
+  }
 }
