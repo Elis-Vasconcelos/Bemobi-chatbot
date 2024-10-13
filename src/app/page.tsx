@@ -1,4 +1,4 @@
-{/*import BillingPage from "./componentes/BillingPage";*/}
+// import BillingPage from "./componentes/BillingPage";
 import styles from "./page.module.css";
 import ButtonChat from "./componentes/chatbot/chat";
 
@@ -6,7 +6,7 @@ import ButtonChat from "./componentes/chatbot/chat";
 export default function Home() {
   return (
     <main className={styles.main}>
-      {/*<BillingPage />*/}
+      {/* <BillingPage /> */}
       <ButtonChat />
     </main>
   );
