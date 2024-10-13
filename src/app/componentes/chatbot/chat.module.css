@@ -1,0 +1,19 @@
+.button {
+    background-color: #D9D9D9;
+    color: #002699;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+.main{
+    position: fixed;
+    right: 85px; 
+    margin-top: 750px;
+    display: flex;
+    justify-content: center;
+
+}
